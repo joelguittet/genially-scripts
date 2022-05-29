@@ -3,10 +3,10 @@
  * This Genially script displays a Result feedback (OK/Error) depending of the location where an item is drag and dropped
  */
 
-function main()
+//function main()
 //  glyFindParentGroupById();
-  alert("end");
-}
+//  alert("end");
+//}
 
 /* First load and evaluate library - This import functions used in the Genially scripts */
 /*var request = new XMLHttpRequest();
