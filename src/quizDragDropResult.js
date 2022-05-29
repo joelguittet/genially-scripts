@@ -9,7 +9,7 @@ function main()
 }
 
 /* First load and evaluate library - This import functions used in the Genially scripts */
-var request = new XMLHttpRequest();
+/*var request = new XMLHttpRequest();
 request.onreadystatechange = function () {
   if (request.readyState === 4 && request.status === 200) {
     eval(request.responseText);
@@ -17,4 +17,6 @@ request.onreadystatechange = function () {
   }
 };
 request.open('GET', 'https://raw.githubusercontent.com/joelguittet/genially-scripts/master/src/library.js', true);
-request.send(null);
+request.send(null);*/
+
+alert("end ok");
