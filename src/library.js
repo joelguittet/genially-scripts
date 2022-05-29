@@ -10,7 +10,7 @@
  * @return Group of the wanted element, null if not found
  */
 export function glyFindParentGroupById(id) {
-
+alert("try to find");
   var oObject = document.getElementById(id);
   for (let i = 0; i < 15; i++) {
     if (oObject.getAttribute("id") == "canva-container") {
