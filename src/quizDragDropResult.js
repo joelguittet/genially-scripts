@@ -8,6 +8,6 @@
 /**
  * Function called when the document is ready
  */
-$(document).ready(function () {
+//$(document).ready(function () {
   alert("loaded!!!");//glyFindParentGroupById();
-});
+//});
