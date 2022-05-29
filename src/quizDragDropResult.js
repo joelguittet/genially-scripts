@@ -4,7 +4,7 @@
  */
 
 function main()
-  glyFindParentGroupById();
+//  glyFindParentGroupById();
   alert("end");
 }
 
