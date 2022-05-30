@@ -25,12 +25,12 @@ docOnMouseUp(function() {
   
     /* Get current destination zone */
     oDestinationZone = glyFindParentGroupById("Z" + nDestinationIndex);
-    if (oDestinationZone != null) {alert("find " + "Z" + nDestinationIndex);
+    if (oDestinationZone != null) {
     
       /* Check if the draggable item is near to the current destination zone */
       if (glyCheckProximity(oDraggableObject, oDestinationZone)) {
       
-        /* Check current destination zone and display Success or Error results */
+        /* Check current destination zone and display Success or Error result */
         if (nDestinationIndex == 1) {
           docShowObject(oSuccessObject);
           docHideObject(oErrorObject);
