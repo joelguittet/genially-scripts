@@ -11,14 +11,21 @@
 //}
 
 /* First load and evaluate library - This import functions used in the Genially scripts */
-var request = new XMLHttpRequest();
+/*var request = new XMLHttpRequest();
 request.onreadystatechange = function () {
   if (request.readyState === 4 && request.status === 200) {
     eval(request.responseText);
-alert("begin ok");
-glyFindParentGroupById("id_test");
-alert("end ok");
+    alert("begin ok");
+    import { glyFindParentGroupById } from "library.js";
+    glyFindParentGroupById("id_test");
+    alert("end ok");
   }
 };
 request.open('GET', 'https://raw.githubusercontent.com/joelguittet/genially-scripts/master/src/library.js', true);
-request.send(null);
+request.send(null);*/
+
+import('https://raw.githubusercontent.com/joelguittet/genially-scripts/master/src/library.js').then(module => {
+    alert("begin ok");
+    module.glyFindParentGroupById("id_test");
+    alert("end ok");
+});
