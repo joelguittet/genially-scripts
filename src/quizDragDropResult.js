@@ -30,26 +30,6 @@ alert("try to find");
   return oObject;
 }
 
-//import * as library from "https://raw.githubusercontent.com/joelguittet/genially-scripts/master/src/library.js";
-
-//function main()
-//  glyFindParentGroupById();
-//  alert("end");
-//}
-
-/* First load and evaluate library - This import functions used in the Genially scripts */
-/*var request = new XMLHttpRequest();
-request.onreadystatechange = function () {
-  if (request.readyState === 4 && request.status === 200) {
-    eval(request.responseText);
-    alert("begin ok");
-    glyFindParentGroupById("id_test");
-    alert("end ok");
-  }
-};
-request.open('GET', 'https://raw.githubusercontent.com/joelguittet/genially-scripts/master/src/library.js', true);
-request.send(null);*/
-
 alert("begin ok");
 glyFindParentGroupById("id_test");
 alert("end ok");
