@@ -9,7 +9,8 @@
  * @param id ID of the script element attached to the group
  * @return Group of the wanted element, null if not found
  */
-export function glyFindParentGroupById(id) {
+//export function
+glyFindParentGroupById(id) {
 alert("try to find");
   var oObject = document.getElementById(id);
   for (let i = 0; i < 15; i++) {
