@@ -19,17 +19,20 @@ docOnMouseUp(function() {
   var nDestinationIndex = 1;
   do {
   
-    /* Get current desination zone */
+    /* Get current destination zone */
     oDestinationZone = glyFindParentGroupById("Z" + nDestinationIndex);
     if (oDestinationZone != null) {alert("find " + "Z" + nDestinationIndex);
     
-      /* Check if the draggable item is near to the current zone */
+      /* Check if the draggable item is near to the current destination zone */
       if (glyCheckProximity(oObject, oDestinationZone)) {alert("they are closed");
       
       
       
       }
     }
+    
+    /* Next destination zone */
+    nDestinationIndex++;
     
   } while (oDestinationZone != null);
 });
