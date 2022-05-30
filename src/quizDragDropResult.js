@@ -3,7 +3,7 @@
  * This Genially script displays a Result feedback (OK/Error) depending of the location where an item is drag and dropped
  */
 
-//import { glyFindParentGroupById } from "https://raw.githubusercontent.com/joelguittet/genially-scripts/master/src/library.js";
+import * as library from "https://raw.githubusercontent.com/joelguittet/genially-scripts/master/src/library.js";
 
 //function main()
 //  glyFindParentGroupById();
@@ -24,8 +24,6 @@ request.onreadystatechange = function () {
 request.open('GET', 'https://raw.githubusercontent.com/joelguittet/genially-scripts/master/src/library.js', true);
 request.send(null);*/
 
-import('https://raw.githubusercontent.com/joelguittet/genially-scripts/master/src/library.js').then(module => {
-    alert("begin ok");
-    module.glyFindParentGroupById("id_test");
-    alert("end ok");
-});
+alert("begin ok");
+library.glyFindParentGroupById("id_test");
+alert("end ok");
