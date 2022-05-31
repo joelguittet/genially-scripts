@@ -58,3 +58,19 @@ request.open('GET', 'https://raw.githubusercontent.com/joelguittet/genially-scri
 request.send(null);
 </script>
 ```
+
+## Alternative
+
+It is possible to use radio buttons if only one Success item is expected.
+
+In this case the Success radio button item is HTML element as shown below:
+
+```
+<input type="radio" id="S1" name="G1" style="border:0px;width:100%;height:2em;"><script></script>
+```
+
+And the Error radio button items are HTML elements as shown below:
+
+```
+<input type="radio" id="Ex" name="G1" style="border:0px;width:100%;height:2em;"><script></script>
+```
