@@ -34,6 +34,8 @@ The Error result item is grouped with an HTML element as shown below:
 
 The Error element is optional and will be shown if the draggable item is moved to Zx (x>1).
 
+Animations on the Success and Error elements should be added in order to display the elements with a 0.5s delay when the page is loaded. This permit the script to initialize elements.
+
 The script is inserted in the presentation using an HTML element as shown below:
 
 ```
