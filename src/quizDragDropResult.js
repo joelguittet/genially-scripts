@@ -4,51 +4,73 @@
 
 /* Listen for mouse 'up' event */
 docOnMouseUp(function() {
-
-  /* Find draggable item */
-  var oDraggableObject = glyFindParentGroupById("O1");
-  if (oDraggableObject == null) {
-    return;
-  }
   
   /* Find Success and Error items */
   var oSuccessObject = glyFindParentGroupById("Success");
   var oErrorObject = glyFindParentGroupById("Error");
   
-  /* Parse all destination zones */
-  var oDestinationZone;
-  var nDestinationIndex = 1;
+  /* Flag to indicate Success and Error items should be hidden */
+  var bHideAll = true;
+
+  /* Parse all draggable items */
+  var oDraggableObject;
+  var nDraggableIndex = 1;
   do {
-  
-    /* Get current destination zone */
-    oDestinationZone = glyFindParentGroupById("Z" + nDestinationIndex);
-    if (oDestinationZone != null) {
+
+    /* Get current draggable object */
+    oDraggableObject = glyFindParentGroupById("O" + nDraggableIndex);
+    if (oDraggableObject != null) {
     
-      /* Check if the draggable item is near to the current destination zone */
-      if (glyCheckProximity(oDraggableObject, oDestinationZone)) {
-      
-        /* Check current destination zone and display Success or Error result */
-        if (nDestinationIndex == 1) {
-          docShowObject(oSuccessObject);
-          docHideObject(oErrorObject);
-        } else {
-          docHideObject(oSuccessObject);
-          docShowObject(oErrorObject);
+      /* Parse all destination zones */
+      var oDestinationZone;
+      var nDestinationIndex = 1;
+      do {
+  
+        /* Get current destination zone */
+        oDestinationZone = glyFindParentGroupById("Z" + nDestinationIndex);
+        if (oDestinationZone != null) {
+    
+          /* Check if the current draggable item is closed to the current destination zone */
+          if (glyCheckProximity(oDraggableObject, oDestinationZone) == true) {
+          
+            /* Check current draggable item and destination zone and display Match result */
+            var oMatchObject = glyFindParentGroupById("M" + nDraggableIndex);
+            if (nDraggableIndex == nDestinationIndex) {
+              docShowObject(oMatchObject);
+            } else {
+              docHideObject(oMatchObject);
+            }
+            
+            /* Check current draggable item and destination zone and display Success or Error result */
+            if (nDraggableIndex == nDestinationIndex) {
+              docShowObject(oSuccessObject);
+              docHideObject(oErrorObject);
+            } else {
+              docHideObject(oSuccessObject);
+              docShowObject(oErrorObject);
+            }
+            
+            /* At least one of the result is shown */
+            bHideAll = false;
+          }
         }
-        
-        /* Destination zone found, no need to check the following zones, stop treatment here */
-        return;
-      }
+    
+        /* Next destination zone */
+        nDestinationIndex++;
+    
+      } while (oDestinationZone != null);
     }
     
-    /* Next destination zone */
-    nDestinationIndex++;
+    /* Next draggable item */
+    nDraggableIndex++;
     
-  } while (oDestinationZone != null);
+  } while (oDraggableObject != null);
   
-  /* If this point is reached this is because the draggable item is not near to a destination zone, hide Success and Error results in this case */
-  docHideObject(oSuccessObject);
-  docHideObject(oErrorObject);
+  /* Check if Success and Error results should be hidden */
+  if (bHideAll == true) {
+    docHideObject(oSuccessObject);
+    docHideObject(oErrorObject);
+  }
 });
 
 /* Find and hide Success and Error items */
@@ -56,3 +78,14 @@ var oSuccessObject = glyFindParentGroupById("Success");
 var oErrorObject = glyFindParentGroupById("Error");
 docHideObject(oSuccessObject);
 docHideObject(oErrorObject);
+
+/* Find and hide all Match items */
+var oMatchObject;
+var nMatchIndex = 1;
+do {
+  oMatchObject = glyFindParentGroupById("M" + nMatchIndex);
+  if (oMatchObject != null) {
+    docHideObject(oMatchObject);
+  }
+  nMatchIndex++;
+} while (oMatchObject != null);
