@@ -18,13 +18,13 @@ The destination zones items are grouped with some HTML elements as shown below:
 
 It is possible to define multiple destination zones with ID `Zx` where `x` is a number starting at 1.
 
-The sucess result item is grouped with an HTML elements as shown below:
+The success result item is grouped with an HTML elements as shown below:
 
 ```
 <div id="Success"></div><script></script>
 ```
 
-The Succes element will be shown if the draggable item is moved to Z1.
+The Success element is optional and will be shown if the draggable item is moved to Z1.
 
 The error result item is grouped with an HTML elements as shown below:
 
@@ -32,7 +32,7 @@ The error result item is grouped with an HTML elements as shown below:
 <div id="Error"></div><script></script>
 ```
 
-The Error element will be shown if the draggable item is moved to Zx (x>1).
+The Error element is optional and will be shown if the draggable item is moved to Zx (x>1).
 
 The script is inserted in the presentation using an HTML element as shown below:
 
