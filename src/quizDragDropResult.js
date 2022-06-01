@@ -9,8 +9,9 @@ docOnMouseUp(function() {
   var oSuccessObject = glyFindParentGroupById("Success");
   var oErrorObject = glyFindParentGroupById("Error");
   
-  /* Flag to indicate Success and Error items should be hidden */
-  var bHideAll = true;
+  /* Flags to compute Success and Error visibility */
+  var bHideSuccess = false;
+  var bShowError = false;
 
   /* Parse all draggable items */
   var oDraggableObject;
@@ -24,6 +25,7 @@ docOnMouseUp(function() {
       /* Parse all destination zones */
       var oDestinationZone;
       var nDestinationIndex = 1;
+      var bDestinationFound = false;
       do {
   
         /* Get current destination zone */
@@ -33,32 +35,28 @@ docOnMouseUp(function() {
           /* Check if the current draggable item is closed to the current destination zone */
           if (glyCheckProximity(oDraggableObject, oDestinationZone) == true) {
           
+            /* Draggable item is closed to a destination zone */
+            bDestinationFound = true;
+            
             /* Check current draggable item and destination zone and display Match result */
             var oMatchObject = glyFindParentGroupById("M" + nDraggableIndex);
             if (nDraggableIndex == nDestinationIndex) {
               docShowObject(oMatchObject);
             } else {
               docHideObject(oMatchObject);
+              bShowError = true;
             }
-            
-            /* Check current draggable item and destination zone and display Success or Error result */
-            if (nDraggableIndex == nDestinationIndex) {
-              docShowObject(oSuccessObject);
-              docHideObject(oErrorObject);
-            } else {
-              docHideObject(oSuccessObject);
-              docShowObject(oErrorObject);
-            }
-            
-            /* At least one of the result is shown */
-            bHideAll = false;
+          } else {
+          
+            /* Draggable item is not closed to a destination zone */
+            bHideSuccess = true;
           }
         }
     
         /* Next destination zone */
         nDestinationIndex++;
     
-      } while (oDestinationZone != null);
+      } while ((oDestinationZone != null) && (bDestinationFound == false));
     }
     
     /* Next draggable item */
@@ -66,18 +64,18 @@ docOnMouseUp(function() {
     
   } while (oDraggableObject != null);
   
-  /* Check if Success and Error results should be hidden */
-  if (bHideAll == true) {
+  /* Check if Success and Error results should be shown/hidden */
+  if (bShowError == true) {
+    docHideObject(oSuccessObject);
+    docShowObject(oErrorObject);
+  } else if (bHideSuccess == false) {
+    docShowObject(oSuccessObject);
+    docHideObject(oErrorObject);
+  } else {
     docHideObject(oSuccessObject);
     docHideObject(oErrorObject);
   }
 });
-
-/* Find and hide Success and Error items */
-var oSuccessObject = glyFindParentGroupById("Success");
-var oErrorObject = glyFindParentGroupById("Error");
-docHideObject(oSuccessObject);
-docHideObject(oErrorObject);
 
 /* Find and hide all Match items */
 var oMatchObject;
@@ -89,3 +87,9 @@ do {
   }
   nMatchIndex++;
 } while (oMatchObject != null);
+
+/* Find and hide Success and Error items */
+var oSuccessObject = glyFindParentGroupById("Success");
+var oErrorObject = glyFindParentGroupById("Error");
+docHideObject(oSuccessObject);
+docHideObject(oErrorObject);
