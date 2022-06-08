@@ -7,7 +7,7 @@
  */
 function checkResult() {
 
-  console.log("checkResult is called!");
+  alert("checkResult is called!");
   
   /* Find Success and Error items */
   var oSuccessObject = glyFindParentGroupById("Success");
