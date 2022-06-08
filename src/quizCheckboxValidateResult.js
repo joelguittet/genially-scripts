@@ -2,16 +2,34 @@
  * Quiz - Checkbox, Validate Result
  */
 
+var validate = false;
+
+/**
+ * Function called when validate button is clicked
+ */
+function setValidate() {
+
+  /* Indicate validate button has been clicked */
+  validate = true;
+}
+
 /**
  * Function used to check result
  */
 function checkResult() {
-
-  alert("checkResult is called!");
   
   /* Find Success and Error items */
   var oSuccessObject = glyFindParentGroupById("Success");
   var oErrorObject = glyFindParentGroupById("Error");
+  
+  /* Check if validate button has been clicked */
+  if (false == validate) {
+  
+    /* Hide result and stop treatment here */
+    docHideObject(oSuccessObject);
+    docHideObject(oErrorObject);
+    return;
+  }
   
   /* Parse all Success checkboxes */
   var oSuccessCheckbox;
@@ -71,14 +89,15 @@ function checkResult() {
 }
 
 /* Find and hide Success and Error items */
-var oSuccessObject = glyFindParentGroupById("Success");
+/*var oSuccessObject = glyFindParentGroupById("Success");
 var oErrorObject = glyFindParentGroupById("Error");
 docHideObject(oSuccessObject);
-docHideObject(oErrorObject);
+docHideObject(oErrorObject);*/
 
 /* Find Validate button and register 'onclick' event */
-//var oValidateObject = glyFindParentGroupById("Validate");alert("Validate found="+oValidateObject.getAttribute("id"));
-//docRegisterElementEvent(oValidateObject, 'onclick', checkResult);
+var oValidateObject = glyFindParentGroupById("Validate");
+docRegisterElementEvent(oValidateObject, 'onclick', setValidate);
 
+/* Periodically check result to be displayed */
 checkResult();
-setInterval(checkResult, 30000);
+setInterval(checkResult, 500);
