@@ -23,13 +23,13 @@ It is possible to define multiple checkboxes with ID `Ex` where `x` is a number 
 The Validate button item is grouped with an HTML element as shown below:
 
 ```
-<div id="Validate"></div><script></script>
+<div id="buttonValidate"></div><script></script>
 ```
 
 The Success result item is grouped with an HTML element as shown below:
 
 ```
-<div id="Success"></div><script></script>
+<div id="resultSuccess"></div><script></script>
 ```
 
 The Success element is optional and will be shown if all the Success checkboxes and no Error checkboxes are checked when the Validate button is clicked.
@@ -37,7 +37,7 @@ The Success element is optional and will be shown if all the Success checkboxes 
 The Error result item is grouped with an HTML element as shown below:
 
 ```
-<div id="Error"></div><script></script>
+<div id="resultError"></div><script></script>
 ```
 
 The Error element is optional and will be shown if not all the Success checkboxes or at least one Error checkboxes are checked when the Validate button is clicked.

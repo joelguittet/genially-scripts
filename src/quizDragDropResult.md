@@ -33,7 +33,7 @@ The Match elements are optional and will be shown if the draggable item `Ox` is 
 The Success result item is grouped with an HTML element as shown below:
 
 ```
-<div id="Success"></div><script></script>
+<div id="resultSuccess"></div><script></script>
 ```
 
 The Success element is optional and will be shown if all the draggable items are moved to the associated destination zones.
@@ -41,7 +41,7 @@ The Success element is optional and will be shown if all the draggable items are
 The Error result item is grouped with an HTML element as shown below:
 
 ```
-<div id="Error"></div><script></script>
+<div id="resultError"></div><script></script>
 ```
 
 The Error element is optional and will be shown if at least one draggable item is moved to the wrong destination zone.

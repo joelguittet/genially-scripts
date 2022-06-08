@@ -6,8 +6,8 @@
 docOnMouseUp(function() {
   
   /* Find Success and Error items */
-  var oSuccessObject = glyFindParentGroupById("Success");
-  var oErrorObject = glyFindParentGroupById("Error");
+  var oSuccessObject = glyFindParentGroupById("resultSuccess");
+  var oErrorObject = glyFindParentGroupById("resultError");
   
   /* Flags to compute Success and Error visibility */
   var bHideSuccess = false;
@@ -89,7 +89,7 @@ do {
 } while (oMatchObject != null);
 
 /* Find and hide Success and Error items */
-var oSuccessObject = glyFindParentGroupById("Success");
-var oErrorObject = glyFindParentGroupById("Error");
+var oSuccessObject = glyFindParentGroupById("resultSuccess");
+var oErrorObject = glyFindParentGroupById("resultError");
 docHideObject(oSuccessObject);
 docHideObject(oErrorObject);

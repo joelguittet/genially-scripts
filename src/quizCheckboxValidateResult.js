@@ -8,8 +8,8 @@
 function checkResult() {
   
   /* Find Success and Error items */
-  var oSuccessObject = glyFindParentGroupById("SuccessJGT");
-  var oErrorObject = glyFindParentGroupById("Error");
+  var oSuccessObject = glyFindParentGroupById("resultSuccess");
+  var oErrorObject = glyFindParentGroupById("resultError");
   
   /* Parse all Success checkboxes */
   var oSuccessCheckbox;
@@ -69,11 +69,11 @@ function checkResult() {
 }
 
 /* Find and hide Success and Error items */
-var oSuccessObject = glyFindParentGroupById("SuccessJGT");
-var oErrorObject = glyFindParentGroupById("Error");
+var oSuccessObject = glyFindParentGroupById("resultSuccess");
+var oErrorObject = glyFindParentGroupById("resultError");
 docHideObject(oSuccessObject);
 docHideObject(oErrorObject);
 
 /* Find Validate button and register 'onclick' event */
-var oValidateObject = glyFindParentGroupById("Validate");
+var oValidateObject = glyFindParentGroupById("buttonValidate");
 docRegisterElementEvent(oValidateObject, 'onclick', checkResult);
