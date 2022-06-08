@@ -94,7 +94,7 @@ function checkResult() {
 var oErrorObject = glyFindParentGroupById("Error");
 docHideObject(oSuccessObject);
 docHideObject(oErrorObject);*/
-
+alert("init !!!");
 /* Find Validate button and register 'onclick' event */
 var oValidateObject = glyFindParentGroupById("Validate");alert(oValidateObject.getAttribute("class"));
 docRegisterElementEvent(oValidateObject, 'onclick', setValidate);
