@@ -77,5 +77,5 @@ docHideObject(oSuccessObject);
 docHideObject(oErrorObject);
 
 /* Find Validate button and register 'onclick' event */
-var oValidateObject = glyFindParentGroupById("Validate");
+var oValidateObject = glyFindParentGroupById("Validate");alert("Validate found="+oValidateObject.getAttribute("id"));
 docRegisterElementEvent(oValidateObject, 'onclick', checkResult);
