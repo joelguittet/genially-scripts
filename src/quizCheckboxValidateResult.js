@@ -8,7 +8,7 @@
 function checkResult() {
   
   /* Find Success and Error items */
-  var oSuccessObject = glyFindParentGroupById("Success");
+  var oSuccessObject = glyFindParentGroupById("SuccessJGT");
   var oErrorObject = glyFindParentGroupById("Error");
   
   /* Parse all Success checkboxes */
@@ -69,7 +69,7 @@ function checkResult() {
 }
 
 /* Find and hide Success and Error items */
-var oSuccessObject = glyFindParentGroupById("Success");
+var oSuccessObject = glyFindParentGroupById("SuccessJGT");
 var oErrorObject = glyFindParentGroupById("Error");
 docHideObject(oSuccessObject);
 docHideObject(oErrorObject);
