@@ -11,6 +11,7 @@ function setValidate() {
 
   /* Indicate validate button has been clicked */
   validate = true;
+  console.log("validated!");
 }
 
 /**
@@ -95,7 +96,7 @@ docHideObject(oSuccessObject);
 docHideObject(oErrorObject);*/
 
 /* Find Validate button and register 'onclick' event */
-var oValidateObject = glyFindParentGroupById("Validate");
+var oValidateObject = glyFindParentGroupById("Validate");alert(oValidateObject.getAttribute("class"));
 docRegisterElementEvent(oValidateObject, 'onclick', setValidate);
 
 /* Periodically check result to be displayed */
