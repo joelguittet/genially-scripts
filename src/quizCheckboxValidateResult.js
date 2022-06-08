@@ -81,4 +81,4 @@ docHideObject(oErrorObject);
 //docRegisterElementEvent(oValidateObject, 'onclick', checkResult);
 
 checkResult();
-setInterval(checkResult, 500);
+setInterval(checkResult, 30000);
